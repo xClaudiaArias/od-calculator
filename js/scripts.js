@@ -1,3 +1,8 @@
+let displayValue = ''; // current value of the display
+
+let display = document.querySelector('.display');
+const buttons = document.querySelectorAll('button');
+
 const add = (a, b) => {
     console.log(a+b)
     return a + b
@@ -18,10 +23,9 @@ const divide = (a, b) => {
     return b === 0 ? 0 : a / b
 }
 
-let num1 = 3
-let operator = "+"
-let num2 = 5
-
+let firstOperand = null
+let operator = null
+let waitingForSecondOperand = false
 
 const operate = (operator, num1, num2) => {
     switch (operator) {
@@ -38,4 +42,24 @@ const operate = (operator, num1, num2) => {
     }
 }
 
-operate('/', 2, 3)
+
+buttons.forEach(button => {
+    button.addEventListener('click', () => {
+        // clear button 
+        if (button.textContent === "ac") {
+            firstOperand = null
+            operator = null
+            waitingForSecondOperand = false
+            displayValue = ''
+            display.textContent = 0
+        } else if (button.textContent === "=") { //equal button
+            console.log("equals")
+        } else {
+            
+        }
+    })
+})
+
+
+
+

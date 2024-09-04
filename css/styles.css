@@ -1,3 +1,9 @@
 h1 {
     color: red;
 }
+
+.display {
+    width: 400px;
+    height: 30px;
+    border: 1px solid black;
+}
